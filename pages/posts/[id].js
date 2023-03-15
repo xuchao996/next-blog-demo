@@ -7,13 +7,13 @@ export default function Post(props) {
             <Head>
                 <title>{props.post.title}</title>
             </Head>
-            <h1>Post</h1>
-            <p>
+            {/* <p>
                 {props.post.id}
-            </p>
-            <p>
+            </p> */}
+            <h2>
+                {/* <span>{props.post.id}</span> /  */}
                 {props.post.title}
-            </p>
+            </h2>
             <p>
                 {props.post.date}
             </p>
@@ -32,7 +32,6 @@ export function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const post = await getBlogById(params.id);
-    console.log("post", post)
     return {
         props: {
             post: post
